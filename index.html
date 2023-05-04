@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2019 by your firstname lastname</title>
+
+<!-- This is a comment line which won't be rendered by any HTML browser -->
+
+
+<style>
+
+.title {
+  background-color: #3aa;
+  color: yellow;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 32px;
+}
+
+.sectionheading {
+  background-color: #a77;
+  color: black;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+
+
+</head>
+
+<body>
+
+
+<div class="title"> 25 Concepts by Knoah Bragg </div>
+</div>
+
+  
+<div class="sectionheading"> 1. Is javascript (js) array mutable? Define: array methods filter, indexOf, at, splice and slice. Show one interesting example showing how to use these methods respectively?  </div>
+
+<button class="collapsible"> Javascript </button>
+<div class="content">
+  <p>
+    Javascript arrays are mutable, which means that you can modify their contents by adding, removing, or updating elements.
+  </p>
+</div>
+
+<button class="collapsible"> Array methods filter </button>
+<div class="content">
+  <p>
+    Creates a new array with all elements that pass the test implemented by the provided function.
+  </p>
+
+  <p>
+    const numbers = [1, 2, 3, 4, 5]; <br>
+const evenNumbers = numbers.filter(num => num % 2 === 0); <br>
+console.log(evenNumbers);
+  </p>
+</div>
+
+<button class="collapsible"> indexOf </button>
+<div class="content">
+  <p>
+    Returns the index of the first occurrence of a specified element in an array, or -1 if it is not found.
+  </p>
+
+  <p>
+    const fruits = ['apple', 'banana', 'orange']; <br>
+const index = fruits.indexOf('banana'); <br>
+console.log(index);
+  </p>
+</div>  
+
+<button class="collapsible"> at </button>
+<div class="content">
+  <p>
+    Returns the element at the specified index in an array.
+  </p>
+  
+  <p>
+    const numbers = [1, 2, 3, 4, 5]; <br>
+const thirdNumber = numbers.at(2); <br>
+console.log(thirdNumber);
+  </p>
+</div>
+
+<button class="collapsible"> Splice </button>
+<div class="content">
+  <p>
+    Changes the contents of an array by removing or replacing existing elements and/or adding new elements.
+  </p>
+
+  <p>
+    const numbers = [1, 2, 3, 4, 5]; <br>
+numbers.splice(2, 1, 'three'); <br>
+console.log(numbers); // Output: [1, 2, 'three', 4, 5]
+  </p>
+</div>
+
+<button class="collapsible"> Slice </button>
+<div class="content">
+  <p>
+    Returns a shallow copy of a portion of an array into a new array object.
+  </p>
+
+  <p>
+    const numbers = [1, 2, 3, 4, 5]; <br>
+const subarray = numbers.slice(2, 4); <br>
+console.log(subarray);
+  </p>
+</div>
+
+
+<div class="sectionheading"> 2. Explain javascript array methods: push, pop, shift and unshift. Show how to use a javascript array as a queue and stack respectively. </div>
+
+<button class="collapsible"> Push </button>
+<div class="content">
+  <p>
+    The push method is used to add one or more elements to the end of an array. It modifies the original array and returns the new length of the array.
+  </p>
+</div>
+
+<button class="collapsible"> Pop </button>
+<div class="content">
+  <p>
+    The pop method is used to remove the last element from an array. It modifies the original array and returns the removed element.
+  </p>
+</div>
+
+<button class="collapsible"> Shift </button>
+<div class="content">
+  <p>
+     The shift method is used to remove the first element from an array. It modifies the original array and returns the removed element.
+  </p>
+</div>
+
+<button class="collapsible"> Unshift </button>
+<div class="content">
+  <p>
+    The unshift method is used to add one or more elements to the beginning of an array. It modifies the original array and returns the new length of the array.
+  </p>
+</div>
+
+<button class="collapsible"> Queue </button>
+<div class="content">
+  <p>
+    const myQueue = []; <br>
+myQueue.push(1); <br>
+myQueue.push(2); <br>
+myQueue.push(3); <br>
+const firstElement = myQueue.shift(); <br>
+console.log(firstElement); <br>
+console.log(myQueue); 
+  </p>
+</div>
+
+<button class="collapsible"> Stack </button>
+<div class="content">
+  <p>
+    const myStack = []; <br>
+myStack.push(1); <br>
+myStack.push(2); <br>
+myStack.push(3); <br>
+const lastElement = myStack.pop(); <br>
+console.log(lastElement); <br>
+console.log(myStack); 
+  </p>
+</div>
+
+  
+<div class="sectionheading"> 3. Show how a js object to describe a student (using three property fname, lname and age), and show an array of 3 student objects. </div>
+
+<button class="collapsible"> Code </button>
+<div class="content">
+  <p>
+    const students = [ <br>
+  { <br>
+    fname: 'John', <br>
+    lname: 'Doe', <br>
+    age: 18 <br>
+  }, <br>
+  { <br>
+    fname: 'Jane', <br>
+    lname: 'Doe', <br>
+    age: 20 <br>
+  }, <br>
+  { <br>
+    fname: 'Bob', <br>
+    lname: 'Smith', <br>
+    age: 19 <br>
+  } <br>
+];
+  </p>
+</div>
+
+
+<div class="sectionheading"> 4. Name two differences between netlify and back4APP, and provide 3 alternatives and competitors to them. </div>
+
+<button class="collapsible"> Differences </button>
+<div class="content">
+  <p>
+    Netlify is primarily a web hosting and serverless platform that allows developers to deploy static websites and serverless functions, while Back4App is primarily a backend-as-a-service (BaaS) platform that provides a complete backend solution for building web and mobile apps.
+  </p>
+
+  <p>
+    Netlify provides a wide range of integrations and plugins that can be used to extend its functionality and automate workflows, while Back4App provides a range of pre-built backend modules and APIs that can be used to build more complex applications.
+  </p>
+</div>
+
+<button class="collapsible"> Alternatives </button>
+<div class="content">
+  <p>
+    Firebase, AWS Amplify, Heorku
+  </p>
+</div> 
+  
+
+<div class="sectionheading"> 6. Briefly compare json, xml, yaml (“ YAML   Ain’t   Markup   Language”), and markdown. </div>
+
+<button class="collapsible"> JSON </button>
+<div class="content">
+  <p>
+    JSON is a lightweight data interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is based on the JavaScript programming language and is commonly used in web development and APIs. JSON is often used for transmitting data between a server and a web application, and is widely supported by modern programming languages.
+  </p>
+</div>
+
+<button class="collapsible"> XML </button>
+<div class="content">
+  <p>
+    XML is a markup language that is used to describe data and is often used to exchange information between different systems. It allows developers to define their own markup language, making it highly customizable and flexible. XML is widely used in enterprise-level applications, and is often used to describe structured data in a hierarchical way.
+  </p>
+</div>
+
+<button class="collapsible"> YAML </button>
+<div class="content">
+  <p>
+    YAML is a human-readable data serialization format that is often used for configuration files and data exchange between programming languages. It is designed to be easy to read and write, and is often used in DevOps and configuration management. YAML is more compact than XML, making it easier to write and read, and it supports complex data structures such as arrays and maps.
+  </p>
+</div>
+
+<button class="collapsible"> Markdown </button>
+<div class="content">
+  <p>
+    Markdown is a lightweight markup language that is used to format text documents. It is often used to write documentation, readme files, and other types of technical documentation. Markdown is designed to be easy to read and write, and it can be easily converted to HTML or other formats. It does not support complex data structures like YAML or JSON.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 7. Name two js libraries and two js framework respectively.  </div>
+
+<button class="collapsible"> JS libraries </button>
+<div class="content">
+  <p>
+    jQuery & Lodash
+  </p>
+</div>
+
+<button class="collapsible"> JS frameworks </button>
+<div class="content">
+  <p>
+    React & Angular
+  </p>
+</div>
+
+
+<div class="sectionheading"> 8. Differentiate javascript, typescript, transpile , ES6/7,  node. Is Node a framework? Justify your answer. </div>
+
+<button class="collapsible"> Javascript </button>
+<div class="content">
+  <p>
+    JavaScript is a dynamic, interpreted programming language that is primarily used to create interactive web pages and web applications. It is the programming language of the web and is supported by all major web browsers.
+  </p>
+</div>
+
+<button class="collapsible"> Typescript </button>
+<div class="content">
+  <p>
+    TypeScript is a superset of JavaScript that adds optional static typing, classes, interfaces, and other features to the language. It is designed to make it easier to write large-scale applications by providing stronger type checking and better code organization.
+  </p>
+</div>
+
+<button class="collapsible"> Transpile </button>
+<div class="content">
+  <p>
+    Transpiling is the process of converting code from one programming language to another. In the context of JavaScript, it typically refers to converting code written in newer versions of JavaScript to an older version that is more widely supported by web browsers.
+  </p>
+</div>
+
+<button class="collapsible"> ES6/7 </button>
+<div class="content">
+  <p>
+    ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) are newer versions of the JavaScript language that introduced a range of new features and syntax enhancements, such as arrow functions, template literals, classes, and modules.
+  </p>
+</div>
+
+<button class="collapsible"> Node </button>
+<div class="content">
+  <p>
+    Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to run JavaScript outside of the web browser, enabling the creation of server-side applications and command-line tools. Node.js provides access to a range of built-in modules, as well as a package manager (npm) for installing and managing external packages.
+  </p>
+</div>
+
+<button class="collapsible"> Node is not a framework </button>
+<div class="content">
+  <p>
+    It is a JavaScript runtime that provides a platform for running JavaScript outside of the browser. While Node.js provides a range of built-in modules and APIs, it is not a full-fledged framework like React or Angular, which provide a more complete set of tools for building web applications. However, Node.js is often used as the foundation for web application frameworks like Express, Nest.js, and Meteor, which provide additional tools and functionality on top of the Node.js runtime.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 9. Differentiate next.js vs. meteor.js vs. express.js. </div>
+
+<button class="collapsible"> Next.js  </button>
+<div class="content">
+  <p>
+    Next.js is a popular React-based framework for building server-side rendered (SSR) React applications. It provides a range of features, such as automatic code splitting, server-side rendering, static site generation, and support for TypeScript and CSS modules. It also includes a built-in development server and hot module replacement for rapid development.
+  </p>
+</div>
+
+<button class="collapsible"> Meteor.js </button>
+<div class="content">
+  <p>
+    Meteor.js is a full-stack JavaScript framework for building real-time web and mobile applications. It provides a range of features, including real-time updates, data synchronization, server-side rendering, and hot code reloading. Meteor also includes a built-in package manager and a range of pre-built packages for common functionality, such as user accounts and authentication.
+  </p>
+</div>
+
+<button class="collapsible"> Express.js </button>
+<div class="content">
+  <p>
+    Express.js is a minimalist, unopinionated web framework for Node.js that provides a range of features for building web applications and APIs. It is designed to be lightweight and flexible, allowing developers to easily customize and extend its functionality. Express.js provides a range of built-in middleware and supports third-party middleware for adding functionality like authentication and logging.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 10. Name 4 major differences between angular  vs. react. </div>
+
+<button class="collapsible"> Architecture </button>
+<div class="content">
+  <p>
+    Angular is a complete MVC (Model-View-Controller) framework, while React is a library that is primarily focused on the view layer. Angular provides a more opinionated architecture with a set of pre-built components and a more rigid structure, while React provides a more flexible and lightweight approach that allows developers to compose their own components.
+  </p>
+</div>
+
+<button class="collapsible"> Language </button>
+<div class="content">
+  <p>
+    Angular is written in TypeScript, a superset of JavaScript that adds static typing and other features, while React is written in JavaScript and can be used with or without TypeScript.
+  </p>
+</div>
+
+<button class="collapsible"> Learning Curve </button>
+<div class="content">
+  <p>
+    Angular has a steeper learning curve than React due to its more complex architecture and opinionated structure. React, on the other hand, has a simpler and more lightweight API that is easier for developers to pick up and use.
+  </p>
+</div>
+
+<button class="collapsible"> Performance </button>
+<div class="content">
+  <p>
+    React is often considered to be faster and more performant than Angular due to its virtual DOM and efficient rendering strategy. Angular, on the other hand, can be slower due to its two-way data binding and more complex change detection system.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 12. A task-runner is used to define different tasks, define how they are called, in which order they are executed and what dependencies they have. Provides 2 examples of task runner. </div>
+
+<button class="collapsible"> How are they called... </button>
+<div class="content">
+  <p>
+    A task runner is typically called using a command line interface (CLI), where developers can execute various commands to perform different tasks. The specific commands and syntax may vary depending on the task runner being used.
+  </p>
+</div>
+
+<button class="collapsible"> Order </button>
+<div class="content">
+  <p>
+    Task runners execute tasks in the order specified in the configuration file or build script. Each task may have dependencies on other tasks, which are defined in the configuration file, and the task runner will ensure that the dependent tasks are executed before the task that depends on them.
+  </p>
+</div>
+
+<button class="collapsible"> Dependencies </button>
+<div class="content">
+  <p>
+    Task runners may have dependencies on other software tools, packages, or libraries that are required to perform their tasks. For example, a task runner may depend on a specific version of a programming language, a build tool, a package manager, or other tools required to build or deploy an application.
+  </p>
+
+  <p>
+    In addition to these external dependencies, task runners may also have internal dependencies between the tasks defined in their configuration file or build script. For example, a task to compile source code may depend on a task to lint the code first, or a task to run tests may depend on a task to build the code first.
+  </p>
+</div>
+
+<button class="collapsible"> Example 1 - Grunt </button>
+<div class="content">
+  <p>
+    Grunt is a popular JavaScript task runner that allows developers to automate repetitive tasks such as minification, compilation, and testing. Grunt has a large plugin ecosystem, which makes it easy to integrate with other tools and frameworks.
+  </p>
+</div>
+
+<button class="collapsible"> Example 2 - Gulp </button>
+<div class="content">
+  <p>
+    Gulp is another popular JavaScript task runner that uses a streaming approach to automate tasks. Gulp is faster than Grunt because it uses streams instead of temporary files, and it has a simpler and more flexible API that makes it easier to configure and customize. Gulp also has a large plugin ecosystem that allows developers to easily integrate with other tools and frameworks.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 13. What are AJAX and XMLHttpRequest (XHR) objects respectively? Identify 3 properties and 3 methods. </div>
+
+<button class="collapsible"> AJAX </button>
+<div class="content">
+  <p>
+    A technique used in web development to send and receive data from a server asynchronously, without requiring the page to be reloaded. The technique relies on the XMLHttpRequest (XHR) object, which is a built-in JavaScript object that allows developers to make HTTP requests to a server and receive responses.
+  </p>
+</div>
+
+<button class="collapsible"> XMLHttpRequest </button>
+<div class="content">
+  <p>
+    A number of properties and methods that can be used to control its behavior and handle the response. Here are three properties and three methods of the XMLHttpRequest object:
+  </p>
+</div>
+
+<button class="collapsible"> 3 Properties </button>
+<div class="content">
+  <p>
+    readyState: Indicates the current state of the request. There are five possible values, ranging from 0 (uninitialized) to 4 (completed).
+  </p>
+  
+  <p>
+    status: The HTTP status code of the response. This property is set after the request has completed.
+  </p>
+
+  <p>
+    responseText: The response text from the server, if any. This property is set after the request has completed and the response has been received.
+  </p>
+</div>
+
+<button class="collapsible"> 3 Methods </button>
+<div class="content">
+  <p>
+    open(): Opens a new HTTP request, specifying the HTTP method (e.g., GET or POST) and the URL to send the request to.
+  </p>
+
+  <p>
+    send(): Sends the HTTP request to the server. If the request is asynchronous, this method will return immediately, before the response is received.
+  </p>
+
+  <p>
+    setRequestHeader(): Sets a request header for the HTTP request. This method must be called after the open() method and before the send() method.
+  </p>
+</div>
+
+  
+<div class="sectionheading"> 14.  Explain npm, npx, nvm,  package.json and package-lock.json files. </div>
+
+<button class="collapsible"> npm </button>
+<div class="content">
+  <p>
+    Node Package Manager is a package manager for Node.js, a popular server-side JavaScript runtime environment. npm allows developers to easily manage and install packages, libraries, and dependencies that are used in Node.js applications.
+  </p>
+</div>
+
+<button class="collapsible"> npx </button>
+<div class="content">
+  <p>
+    A command-line tool that allows developers to run npm packages without having to install them globally. It comes bundled with npm and is typically used for running executable files from npm packages.
+  </p>
+</div>
+
+<button class="collapsible"> nvm </button>
+<div class="content">
+  <p>
+    Node Version Manager is a tool used to manage different versions of Node.js on a single system. It allows developers to switch between different versions of Node.js easily, without having to uninstall and reinstall different versions manually.
+  </p>
+</div>
+
+<button class="collapsible"> package.json </button>
+<div class="content">
+  <p>
+    A file that contains metadata about a Node.js package, including its name, version, dependencies, and other relevant information. It is typically located at the root directory of a Node.js project and is used by npm to manage the dependencies of the project.
+  </p>
+</div>
+
+<button class="collapsible"> package-lock.json </button>
+<div class="content">
+  <p>
+    A file that is automatically generated by npm when installing packages. It contains an exact, timestamped record of all dependencies installed in the project. This file is used to ensure that the exact same dependencies are installed on all machines running the project, regardless of the order in which they were installed.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 15. Differences among CSS, LESS, SASS. </div>
+
+<button class="collapsible"> Syntax </button>
+<div class="content">
+  <p>
+    CSS uses a simple syntax that consists of selectors, properties, and values. LESS and SASS both use a more complex syntax that includes variables, functions, and mixins, which allow for more advanced styling capabilities.
+  </p>
+</div>
+
+<button class="collapsible"> Compilation </button>
+<div class="content">
+  <p>
+    CSS is interpreted by the web browser directly, while LESS and SASS need to be compiled into CSS before they can be used. This means that LESS and SASS require an additional step in the development process, but it also allows for more advanced features that are not available in CSS.
+  </p>
+</div>
+
+<button class="collapsible"> Features </button>
+<div class="content">
+  <p>
+    LESS and SASS offer features that are not available in CSS, such as variables, functions, and mixins. These features allow developers to write more modular, reusable code and make it easier to maintain and update styles across a large project.
+  </p>
+</div>
+
+<button class="collapsible"> Learning Curve </button>
+<div class="content">
+  <p>
+    CSS has a relatively simple syntax and is easy to learn, but it can become unwieldy for large projects. LESS and SASS have a steeper learning curve, but they offer more advanced features that can make it easier to manage and maintain complex styles.
+  </p>
+</div>
+
+  
+<div class="sectionheading"> 16. Define backbone.js, ember.js, underscore.js, bootstrap  </div>
+
+<button class="collapsible"> Backbone.js </button>
+<div class="content">
+  <p>
+    Backbone is a lightweight JavaScript framework that provides a set of tools for building single-page web applications. It provides a structure for organizing code, including models, views, and controllers, and can be used with other libraries and frameworks.
+  </p>
+</div>
+
+<button class="collapsible"> Ember.js </button>
+<div class="content">
+  <p>
+     Ember is a more comprehensive framework than Backbone, providing tools for building complex web applications. It follows the model-view-viewmodel (MVVM) architecture, and includes features such as routing, templates, and data binding.
+  </p>
+</div>
+
+<button class="collapsible"> Underscore.js </button>
+<div class="content">
+  <p>
+    Underscore is a utility library that provides a set of functional programming helpers, such as map, reduce, and filter, that can be used in JavaScript applications. It also provides methods for working with arrays, objects, and collections.
+  </p>
+</div>
+
+<button class="collapsible"> Bootstrap </button>
+<div class="content">
+  <p>
+    Bootstrap is a popular front-end framework that provides a set of HTML, CSS, and JavaScript tools for building responsive web applications. It includes pre-built UI components, such as buttons, forms, and modals, and can be customized to fit specific design requirements.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 17. Name three major differences between compute engine and app engine. </div>
+
+<button class="collapsible"> Infrastructure </button>
+<div class="content">
+  <p>
+    Compute Engine provides virtual machines that can be fully customized and managed by the user, while App Engine is a fully managed platform that abstracts away the underlying infrastructure, allowing developers to focus solely on the application code.
+  </p>
+</div>
+
+<button class="collapsible"> Scaling </button>
+<div class="content">
+  <p>
+    Compute Engine provides more granular control over scaling, allowing users to scale up or down based on specific needs, while App Engine provides automatic scaling that adjusts resources based on application demand.
+  </p>
+</div>
+
+<button class="collapsible"> Use Cases </button>
+<div class="content">
+  <p>
+    Compute Engine provides more granular control over scaling, allowing users to scale up or down based on specific needs, while App Engine provides automatic scaling that adjusts resources based on application demand.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 18. Name three alternatives (most popular CSS frameworks) to Tail wind, and briefly compare Tailwind with them. </div>
+
+<button class="collapsible"> Boostrap </button>
+<div class="content">
+  <p>
+    Bootstrap is one of the most popular CSS frameworks, offering a wide range of pre-built components and styles. Unlike Tailwind, Bootstrap uses pre-defined classes that can be added to HTML elements, rather than custom utility classes. Bootstrap is known for its ease of use and extensive documentation, making it a popular choice for many web developers.
+  </p>
+</div>
+
+<button class="collapsible"> Foundation </button>
+<div class="content">
+  <p>
+    Foundation is another popular CSS framework, offering a comprehensive set of design patterns and components. Foundation also uses pre-defined classes, but offers more customization options than Bootstrap. It also has a strong focus on responsive design, making it a good choice for projects that require a mobile-first approach.
+  </p>
+</div>
+
+<button class="collapsible"> Bulma </button>
+<div class="content">
+  <p>
+    Bulma is a newer CSS framework that emphasizes flexibility and simplicity. Like Tailwind, it uses custom utility classes, but with a more intuitive syntax that is easier to read and understand. It also offers a wide range of customizable components and a modular architecture, making it easy to customize and extend.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 20. Explain Media Queries , viewport and grid layout. </div>
+
+<button class="collapsible"> Media queries </button>
+<div class="content">
+  <p>
+    Media Queries is a CSS technique that allows you to apply different styles to a web page based on certain conditions, such as screen size, orientation, or device type. This technique is particularly useful for creating responsive designs that adapt to different screen sizes. Media Queries allow you to define rules for specific breakpoints, making it possible to create a layout that looks great on all devices.
+  </p>
+</div>
+
+<button class="collapsible"> Viewport </button>
+<div class="content">
+  <p>
+    The viewport is the area of a web page that is visible to the user. It can vary depending on the size and orientation of the device being used to view the page. In order to create a responsive design, it's important to ensure that the viewport is set correctly. This can be done using the viewport meta tag, which allows you to control the width, height, and initial scale of the viewport.
+  </p>
+</div>
+
+<button class="collapsible"> Grid layout </button>
+<div class="content">
+  <p>
+    Grid Layout is a CSS module that allows you to create complex layouts using a grid system. With Grid Layout, you can define rows and columns and place elements in specific cells, giving you fine-grained control over the layout of your page. This makes it possible to create responsive designs that adapt to different screen sizes, without relying on fixed-width layouts or media queries. Grid Layout is particularly useful for creating complex designs that require precise alignment and positioning of elements.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 21. What are data-attributes? </div>
+
+<button class="collapsible"> Definition </button>
+<div class="content">
+  <p>
+    Data attributes are a feature in HTML that allow you to store extra information on an element using custom attributes. They are prefixed with the "data-" attribute, followed by a name that you choose. For example, you might use a data attribute to store information about a particular item on a webpage, such as a product ID or price. Furthermore, they can be accessed using JavaScript, making them a useful way to store and retrieve data in web applications.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 22. Briefly describe  4 popular template engines or libraries. </div>
+
+<button class="collapsible"> Handlebars </button>
+<div class="content">
+  <p>
+    A popular template engine that uses a simple syntax to generate HTML templates. It supports conditional statements, loops, and partials, and is often used in conjunction with other front-end frameworks like Backbone or Ember.
+  </p>
+</div>
+
+<button class="collapsible"> Pug </button>
+<div class="content">
+  <p>
+    A powerful template engine for Node.js that uses a concise syntax to generate HTML templates. It supports variables, mixins, loops, conditionals, and includes, and is often used in server-side web applications.
+  </p>
+</div>
+
+<button class="collapsible"> EJS </button>
+<div class="content">
+  <p>
+    A simple and flexible templating language that allows you to embed JavaScript code directly into your HTML templates. It supports variables, loops, conditionals, and includes, and is often used in conjunction with Node.js and Express.
+  </p>
+</div>
+
+<button class="collapsible"> Jinja2 </button>
+<div class="content">
+  <p>
+    A popular templating engine for Python that is similar to Django's template engine. It supports variables, loops, conditionals, and includes, and is often used in web applications built with Flask or other Python web frameworks. It also provides features like inheritance, macros, and filters to help make template creation more efficient.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 23. Asynchronous await vs. synchronous blocking calls vs. noblocking calls </div>
+
+<button class="collapsible"> Asynchronous await </button>
+<div class="content">
+  <p>
+    Using callbacks, you pass a function as an argument to another function, and that function calls your function when it's done. With promises, you create an object that represents a future value, and you can attach callbacks to that object to handle success or failure. With async/await syntax, you can write asynchronous code that looks and behaves like synchronous code.
+  </p>
+</div>
+
+<button class="collapsible"> Synchronous </button>
+<div class="content">
+  <p>
+    When you make a synchronous function call, the program waits for the function to complete before moving on to the next line of code. This can lead to performance issues and can make applications feel unresponsive.
+  </p>
+</div>
+
+<button class="collapsible"> Blocking calls </button>
+<div class="content">
+  <p>
+    Those that cause the program to wait until the operation is complete before moving on to the next line of code. This can lead to performance issues, especially if the operation takes a long time to complete.
+  </p>
+</div>
+
+<button class="collapsible"> Non-blocking calls </button>
+<div class="content">
+  <p>
+    They do not cause the program to wait. Instead, they return immediately, and the program can continue executing other code while the operation is being performed. This can lead to better performance and a more responsive application.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 24. Use arrow functions in 3 different cases. </div>
+
+<button class="collapsible"> One-line function </button>
+<div class="content">
+  <p>
+    const double = (x) => x * 2; <br>
+console.log(double(5));
+  </p>
+</div>
+
+<button class="collapsible"> Multiple parameters </button>
+<div class="content">
+  <p>
+    const multiply = (x, y) => x * y; <br>
+console.log(multiply(5, 4));
+  </p>
+</div>
+
+<button class="collapsible"> Function with block statement </button>
+<div class="content">
+  <p>
+    const numbers = [1, 2, 3, 4, 5]; <br>
+const evenNumbers = numbers.filter((number) => { <br>
+  return number % 2 === 0; <br>
+}); <br>
+console.log(evenNumbers);
+  </p>
+</div>
+
+
+<div class="sectionheading"> 27. Define fetch, ajax vs. promise, callback function, ascychronous function.  </div>
+
+<button class="collapsible"> Fetch </button>
+<div class="content">
+  <p>
+    A newer API that provides a simpler and more modern way to make HTTP requests. It returns a Promise that resolves with the Response object representing the response to the request.
+  </p>
+</div>
+
+<button class="collapsible"> AJAX </button>
+<div class="content">
+  <p>
+    An older method of making asynchronous HTTP requests. It uses the XMLHttpRequest object to send the request and handle the response.
+  </p>
+</div>
+
+<button class="collapsible"> Promise </button>
+<div class="content">
+  <p>
+    A built-in JavaScript object that represents the eventual completion (or failure) of an asynchronous operation and allows you to handle it using a chain of then() and catch() methods.
+  </p>
+</div>
+
+<button class="collapsible"> Callback function </button>
+<div class="content">
+  <p>
+    A function that is passed as an argument to another function and is called back later when the operation is complete. Callback functions are commonly used in asynchronous programming to handle the response of an operation.
+  </p>
+</div>
+
+<button class="collapsible"> Asynchronous function </button>
+<div class="content">
+  <p>
+    Functions that return Promises and allow you to write asynchronous code that looks synchronous. They use the "async" keyword to mark the function as asynchronous and the "await" keyword to wait for the completion of asynchronous operations.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 29. Define: Express, Express routing, express middleware </div>
+
+<button class="collapsible"> Express </button>
+<div class="content">
+  <p>
+    A popular Node.js web application framework that provides a set of features for creating web and mobile applications. It provides a lightweight, flexible, and scalable architecture that allows developers to create powerful web applications quickly and easily.
+  </p>
+</div>
+
+<button class="collapsible"> Express routing </button>
+<div class="content">
+  <p>
+    Allows you to create a set of routes for your application. Routes are defined using HTTP methods and URLs, and are used to handle requests to your application. With Express routing, you can define multiple routes for a single URL, and handle requests for different HTTP methods (such as GET, POST, PUT, DELETE) in different ways.
+  </p>
+</div>
+
+<button class="collapsible"> Express middleware </button>
+<div class="content">
+  <p>
+    A function that sits between the request and response objects, and can be used to perform a variety of tasks, such as parsing request bodies, logging requests, and handling errors. Middleware functions can be used globally, for all requests, or can be defined for specific routes. They are executed in order, and can modify the request or response objects as needed before passing them on to the next middleware function in the chain.
+  </p>
+</div>
+
+
+<div class="sectionheading"> 33. Define: toolchain, pipeline, bundler, webpack, transpiler , watcher/HMR </div>
+
+<button class="collapsible"> Toolchain </button>
+<div class="content">
+  <p>
+    A set of tools and technologies that are used to automate the process of building, testing, and deploying web applications. This typically includes tools for compiling, bundling, and optimizing code, as well as tools for testing, debugging, and monitoring applications.
+  </p>
+</div>
+
+<button class="collapsible"> Pipeline </button>
+<div class="content">
+  <p>
+    The series of steps that are involved in building and deploying a web application. This can include steps such as building the application code, testing it, optimizing it, and deploying it to a production environment.
+  </p>
+</div>  
+
+<button class="collapsible"> Bundler </button>
+<div class="content">
+  <p>
+    A tool that is used to combine multiple modules or files into a single file, typically for use in a web application. Bundlers can be used to optimize code and reduce file sizes, which can improve application performance and load times.
+  </p>
+</div>  
+
+<button class="collapsible"> Webpack </button>
+<div class="content">
+  <p>
+    A popular bundler for JavaScript applications that allows developers to bundle their code and assets into a single file. It also provides a number of other features, such as code splitting and hot module replacement, that can improve application performance and development workflows.
+  </p>
+</div>  
+
+<button class="collapsible"> Transpiler </button>
+<div class="content">
+  <p>
+    A tool that is used to convert code from one programming language to another. In web development, transpilers are commonly used to convert newer versions of JavaScript (such as ES6 or ES7) into older, more widely-supported versions.
+  </p>
+</div>  
+
+<button class="collapsible"> Watcher/HMR </button>
+<div class="content">
+  <p>
+    A tool that monitors changes to a project's source files and automatically rebuilds the project when changes are detected. This can be used to speed up development workflows by reducing the time it takes to see changes reflected in the application. HMR takes this a step further by allowing developers to update a single module without having to rebuild the entire application.
+  </p>
+</div>  
+
+<div class="sectionheading"> 34. Define vanilla JS, jquery vs. jqueryUI. </div>
+
+<button class="collapsible"> Vanilla JS </button>
+<div class="content">
+  <p>
+    Refers to the use of JavaScript code without any external libraries or frameworks. It involves using the core language features and built-in APIs provided by the browser to interact with HTML and CSS and manipulate the Document Object Model (DOM). Vanilla JS is versatile and lightweight, but it can require more code to achieve the same results as with a library or framework.
+  </p>
+</div>
+
+<button class="collapsible"> jQuery </button>
+<div class="content">
+  <p>
+    A popular JavaScript library that simplifies the process of writing JavaScript code for web development. It provides a collection of functions and methods that make it easier to manipulate the DOM, handle events, make AJAX requests, and create animations, among other things. jQuery is widely used and has a large community, which means there are plenty of resources and plugins available.
+  </p>
+</div>
+
+<button class="collapsible"> jQuery UI </button>
+<div class="content">
+  <p>
+    A user interface library built on top of jQuery that provides a collection of widgets and interactions to enhance the user experience of web applications. It includes UI components such as dialog boxes, date pickers, sliders, and sortable lists, as well as effects and animations. jQuery UI is designed to be highly customizable and extendable, making it a useful tool for creating complex web interfaces.
+  </p>
+</div>
+  
+  
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+
+</body>
+</html>
